@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Button from "react-bootstrap/Button";
 
 function TodoInput(props) {
   const [inputText, setInputText] = useState("");
@@ -20,15 +21,15 @@ function TodoInput(props) {
         }}
         onKeyDown={handleEnterPress}
       />
-      <button
-        className="add-btn"
+      <Button
+        variant="primary"
         onClick={() => {
           props.addList(inputText);
           setInputText("");
         }}
       >
-        +
-      </button>
+        Add
+      </Button>{" "}
     </div>
   );
 }
